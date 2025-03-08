@@ -2,7 +2,6 @@
 import { useState } from "react";
 import TodoInput from "./component/TodoInput";
 import TodoList from "./component/TodoList";
-import TodoItem from "./component/TodoItem";
 import TodoFooter from "./component/TodoFooter";
 
 interface Todo {
