@@ -67,29 +67,33 @@ function App() {
   };
 
   return (
-    <div className="bg-center">
-      <h1 className="">todos</h1>
-
+    <div className="w-full max-w-lg mx-auto bg-white shadow-md rounded-md p-4">
+      <h1 className="text-7xl font-normal text-[#b83f45]">todos</h1>
+      {}
       <TodoInput
         addTodo={addTodo}
         hasTodos={todos.length > 0}
         toggleAlltodo={toggleAlltodo}
       />
-      <TodoList
-        todos={getFilteredTodos()}
-        toggleTodo={toggleTodo}
-        deleteTodo={deleteTodo}
-        updateTodo={updateTodo}
-      />
-      <TodoFooter
-        todos={todos}
-        filters={{
-          all: allShowTodos,
-          active: activeShow,
-          Completed: completedShow,
-        }}
-        clearCompleted={clearCompleted}
-      />
+      {todos.length > 0 && (
+        <>
+          <TodoList
+            todos={getFilteredTodos()}
+            toggleTodo={toggleTodo}
+            deleteTodo={deleteTodo}
+            updateTodo={updateTodo}
+          />
+          <TodoFooter
+            todos={todos}
+            filters={{
+              all: allShowTodos,
+              active: activeShow,
+              Completed: completedShow,
+            }}
+            clearCompleted={clearCompleted}
+          />
+        </>
+      )}
     </div>
   );
 }

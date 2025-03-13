@@ -39,11 +39,10 @@ const TodoItem = memo(({ todo, toggleTodo, deleteTodo, updateTodo }: Props) => {
   return (
     <li
       key={todo.id}
-      className="flex justify-between items-center bg-white p-2 rounded shadow"
+      className=" flex-row-reverse justify-between items-center p-2 rounded shadow group hover:bg-gray-100 transition-colors duration-200"
     >
-      {/* Radio toggle */}
       <input
-        type="radio"
+        type="checkbox"
         checked={todo.isCompleted}
         onChange={() => toggleTodo(todo.id)}
         placeholder="?"
@@ -72,7 +71,7 @@ const TodoItem = memo(({ todo, toggleTodo, deleteTodo, updateTodo }: Props) => {
       <button
         type="button"
         onClick={() => deleteTodo(todo.id)}
-        className="text-red-500 font-bold px-3 py-1 rounded"
+        className="text-red-500 font-bold px-3 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 hover:text-red-700"
       >
         X
       </button>
